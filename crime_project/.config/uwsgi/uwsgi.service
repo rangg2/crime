@@ -1,0 +1,14 @@
+[Unit]
+Description=uWSGI service
+After=syslog.target
+
+[Service]
+ExecStart=/home/ubuntu/crime/crime/env/bin/uwsgi -i /home/ubuntu/crime/crime/crime_project/.config/uwsgi/crime_setting.ini
+Restart=always
+KillSignal=SIGQUIT
+Type=notify
+StandardError=syslog
+NotifyAccess=all
+
+[Install]
+WantedBy=multi-user.target

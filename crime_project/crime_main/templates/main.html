@@ -1,0 +1,23 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}?{% now "U" %}">
+    <link rel="stylesheet" href="{% static 'css/reset.css' %}?{% now "U" %}">
+</head>
+<body>
+    <div class="container">
+        <div class="big_box">
+            <div class="logo">
+                <img src="{% static 'img/police_logo.svg' %}" alt="로고">
+            </div>
+            <div class="search">
+                <form method="GET" action="{% url 'search' %}">
+                    <input type="text" id="search-box" name="q" placeholder="사건 번호를 입력해주세요">
+                    <button type="submit">검색</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
