@@ -9,13 +9,13 @@
     <div class="container">
         <div class="big_box">
             <div class="logo">
-                <img src="{% static 'img/police_logo.svg' %}" alt="로고">
+                <img src="{% static 'img/police_logo.png' %}" alt="로고">
             </div>
             <div class="search">
                 <form method="GET" action="{% url 'search' %}">
                     <input type="text" id="search-box" name="q" placeholder="사건 번호를 입력해주세요">
                     <button type="submit">검색</button>
-                    <div> 없는 번호 입니다.</div>
+                    <div> 없는 사건 번호 입니다.</div>
                 </form>
             </div>
         </div>

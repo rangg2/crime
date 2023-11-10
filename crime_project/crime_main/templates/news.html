@@ -1,0 +1,24 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/reset.css' %}?{% now "U" %}">
+    <link rel="stylesheet" href="{% static 'css/news.css' %}?{% now "U" %}">
+    <title>루나일보</title>
+</head>
+<body>
+    <div class="news_main">
+        <center>
+        <img class="news" src="{% static "img/신문 1.svg" %}">
+        <div class="news_link"><button onclick="Back()">이전 페이지로</button></div>
+        </center>
+    </div>
+</body>
+<script>
+    function Back(){
+        window.history.back();
+    }
+</script>
+</html>

@@ -22,18 +22,36 @@ def main(request):
 
 def search(request):
         search_query = request.GET.get('q')
-        if search_query == "112":
+        if search_query == "조화도":
             # 검색 결과 페이지로 이동합니다.
-            return HttpResponseRedirect(reverse('search_results'))
-        elif search_query == "검색 1-2":
-            # 검색 결과 페이지로 이동합니다.
-            return HttpResponseRedirect(reverse('search_results2'))    
-    
+            return HttpResponseRedirect(reverse('search_jo'))
+        elif search_query == "연쇄폭행사건":
+            return HttpResponseRedirect(reverse('search_pok'))    
+        elif search_query == "에스텔라티오" or search_query == "Estellatio":
+            return HttpResponseRedirect(reverse('search_est'))
+        elif search_query == "방향제":
+            return HttpResponseRedirect(reverse('search_bang'))
+        elif search_query == "디퓨저":
+            return HttpResponseRedirect(reverse('search_bang'))
+        # elif search_query == "연쇄폭행사건":
+        #     return HttpResponseRedirect(reverse('search_pok'))    
         else:
             return render(request, '404.html')
         
-def search_results(request):
-    return render(request, 'result.html')
+def search_news(request):
+    return render(request, 'news.html')
 
-def search_results2(request):
-    return render(request, 'result2.html')
+def search_news2(request):
+    return render(request, 'news2.html')
+
+def search_news3(request):
+    return render(request, 'news3.html')
+
+def search_jo(request):
+    return render(request, 'jo_list.html')
+def search_pok(request):
+    return render(request, 'pok_list.html')
+def search_est(request):
+    return render(request, 'est_list.html')
+def search_bang(request):
+    return render(request, 'bang_list.html')

@@ -1,0 +1,33 @@
+body{
+    background-color: #333;
+}
+
+.result_main{
+    gap : 10px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    color: white;
+    font-size: large;
+    text-align: center;
+    margin-top: 10%;
+}
+
+.title{
+    margin: 20px;
+}
+
+.news_list{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+
+
+a{
+    color: white;
+}
