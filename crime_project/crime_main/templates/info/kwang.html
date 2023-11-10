@@ -1,0 +1,38 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/reset.css' %}?{% now "U" %}">
+    <link rel="stylesheet" href="{% static 'css/info.css' %}?{% now "U" %}">
+    <title>광종훈 정보</title>
+</head>
+<body>
+    <div class="news_main">
+        <center>
+        <img class="news" src="{% static "img/info/kwang.svg" %}">
+        <ul>
+            <li>이름 : 광종훈</li>
+            <li>성별 : 남성</li>
+            <li>생년월일 : 1988.12.10</li>
+            <li>주소 : 서울시 상북구 상북2로 101길</li>
+            <li>직업 : 광성바이오틱스 대표</li>
+            <li>키 : 185cm</li>
+            <li>몸무게 : 80kg</li>
+            <li>가족 구성원 : 부 광기훈, 모 서율아, 형 광시훈, 광명훈, 누나 광수아, 여동생 광인아</li>
+            <li>학력 : 대졸</li>
+            <li>금고 이력 : 폭행 1회, 음주운전 2회</li>
+            <li>종교 : 무교</li>
+            <li>기타 개인 정보 : 광성그룹 3남</li>
+        </ul>
+        <div class="news_link"><button onclick="Back()">이전 페이지로</button></div>
+        </center>
+    </div>
+</body>
+<script>
+    function Back(){
+        window.history.back();
+    }
+</script>
+</html>

@@ -12,8 +12,8 @@
                 <img src="{% static 'img/police_logo.png' %}" alt="로고">
             </div>
             <div class="search">
-                <form method="GET" action="{% url 'search' %}">
-                    <input type="text" id="search-box" name="q" placeholder="사건 번호를 입력해주세요">
+                <form method="GET" action="{% url 'search' %}" autocomplete=off>
+                    <input type="text" id="search-box" name="q" placeholder="사건 번호 및 관련 키워드를 입력해주세요" autocomplete=off>
                     <button type="submit">검색</button>
                 </form>
             </div>

@@ -1,0 +1,21 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/reset.css' %}?{% now "U" %}">
+    <link rel="stylesheet" href="{% static 'css/result.css' %}?{% now "U" %}">
+    <title>광성그룹 검색 결과</title>
+</head>
+<body>
+<div class="result_main">
+    <div class="title">'광성그룹' 검색 결과</div>
+    <div class="news_list">
+        <div><a href="{% url 'news2' %}">뉴스_1</a></div>
+        <div><a href="{% url 'news3' %}">뉴스_2</a></div>
+    </div>
+    <div><a href="{% url 'main' %}">돌아가기</a></div>
+</div>
+</body>
+</html>
