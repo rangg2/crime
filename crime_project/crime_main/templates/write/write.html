@@ -1,0 +1,23 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}?{% now "U" %}">
+    <link rel="stylesheet" href="{% static 'css/reset.css' %}?{% now "U" %}">
+    <link rel="stylesheet" href="{% static 'css/write.css' %}?{% now "U" %}">
+</head>
+<body>
+    <form class="write-big-box" action="{% url 'create' %}" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="write-box">
+            {{form.title}}
+            {{form.content}}
+            {{form.tag}}
+            {{form.image}}
+        </div>
+        <div>
+            <button type="submit">등록</button>
+        </div>
+    </form>
+</body>
+</html>

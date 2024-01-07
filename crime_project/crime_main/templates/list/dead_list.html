@@ -1,0 +1,23 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/reset.css' %}?{% now "U" %}">
+    <link rel="stylesheet" href="{% static 'css/result.css' %}?{% now "U" %}">
+    <title>피해자정보 검색 결과</title>
+</head>
+<body>
+<div class="result_main">
+    <div class="title">'피해자정보' 검색 결과</div>
+    <div class="news_list">
+        <div><a href="{% url 'search_jung_song' %}">피해자 1</a></div>
+        <div><a href="{% url 'search_ahn_so' %}">피해자 2</a></div>
+        <div><a href="{% url 'search_kang_sung' %}">피해자 3</a></div>
+        <div><a href="{% url 'search_kim_lee' %}">피해자 4</a></div>
+    </div>
+    <div><a href="{% url 'main' %}">돌아가기</a></div>
+</div>
+</body>
+</html>

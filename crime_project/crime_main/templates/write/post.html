@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>{% block heading %}{% endblock %}</h2>
+    <form id="postForm">
+        {% csrf_token %}
+        <label for="title">Title:</label>
+        <input type="text" id="title" name="title"><br>
+
+        <!-- Content 입력란 -->
+        <label for="content" style="display:none;">Content:</label>
+        <textarea id="content" name="content" style="display:none;"></textarea><br>
+
+        <!-- Image 업로드 버튼 -->
+        <label for="image" style="display:none;">Image:</label>
+        <input type="file" id="image" name="image" style="display:none;"><br>
+
+        <!-- Tag 입력란 -->
+        <label for="tag" style="display:none;">Tag:</label>
+        <input type="text" id="tag" name="tag" style="display:none;"><br>
+
+        <!-- Submit 버튼 -->
+        <button type="button" onclick="submitPost()">Submit</button>
+    </form>
+
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script>
+        function submitPost() {
+            var formData = new FormData();
+            formData.append('title', $('#title').val());
+            formData.append('content', $('#content').val());
+            formData.append('image', $('#image')[0].files[0]);
+            formData.append('tag', $('#tag').val());
+
+            $.ajax({
+                url: '{% url "board_list_create" %}',
+                type: 'POST',
+                data: formData,
+                processData: false,
+                contentType: false,
+                success: function(response) {
+                    console.log(response);
+                    // Handle success, e.g., redirect to another page
+                },
+                error: function(error) {
+                    console.error(error);
+                    // Handle error, e.g., display error message
+                }
+            });
+        }
+    </script>
+</body>
+</html>

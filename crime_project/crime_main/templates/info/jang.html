@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/reset.css' %}?{% now "U" %}">
+    <link rel="stylesheet" href="{% static 'css/dead.css' %}?{% now "U" %}">
+    <title>장구순 정보</title>
+</head>
+<body>
+    <div class="news_main_a">
+        <center>
+        {% comment %} <img class="news" src="{% static "img/info/ahn.svg" %}"> {% endcomment %}
+        <ul>
+            <li>이름 : 장구순</li>
+            <li>성별 : 여성</li>
+            <li>생년월일 : 1955.3.8.</li>
+            <li>학력 : 초등학교 중퇴</li>
+            <li>금고 이력 : 사기 3회, 특수폭행 1회, 절도 2회</li>
+            <li>종교 : 조화도</li>
+            <li>기타 개인 정보 : 조화도 교주 </li>
+        </ul>
+        <div class="news_link"><a href="{% url 'main' %}">검색 페이지로</a></div>
+        </center>
+    </div>
+</body>
+<script>
+    function Back(){
+        window.history.back();
+    }
+</script>
+</html>

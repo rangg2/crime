@@ -1,0 +1,50 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/reset.css' %}?{% now "U" %}">
+    <link rel="stylesheet" href="{% static 'css/info.css' %}?{% now "U" %}">
+    <title>{{ board.title }}</title>
+</head>
+<body>
+{% if board.tag2 == '보고서' %}
+    <div class="news_main2">
+{% elif board.tag2 == '인물정보' %}
+    <div class="news_main3">
+{% else %}
+    <div class="news_main">
+{% endif %}
+        <center>
+        {% comment %} {% if board.image %}
+            <img class="news" src="{{ board.image.url }}">
+        {% else %}
+            <p></p>
+        {% endif %} {% endcomment %}
+        {% if board.tag2 == '인물정보' %}
+            {% if board.image %}
+                <img class="news10" src="{{ board.image.url }}">
+                <ul>
+                    <li>{{ board.content|linebreaksbr }}</li>
+                </ul>
+            {% else %}
+                <ul style="margin-top:10%;">
+                    <li>{{ board.content|linebreaksbr }}</li>
+                </ul>
+            {% endif %}
+        
+        {% else %}
+            <img class="news" src="{{ board.image.url }}">
+        {% endif %}
+        {% comment %} <div><a href="{% url 'main' %}">돌아가기</a></div> {% endcomment %}
+        <div class="news_link"><button onclick="Back()" style="margin-bottom: 5%;">이전 페이지로</button></div>
+        </center>
+    </div>
+</body>
+<script>
+    function Back(){
+        window.history.back();
+    }
+</script>
+</html>

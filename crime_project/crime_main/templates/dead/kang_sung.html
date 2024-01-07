@@ -1,0 +1,39 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/reset.css' %}?{% now "U" %}">
+    <link rel="stylesheet" href="{% static 'css/dead.css' %}?{% now "U" %}">
+    <title>피해자 정보</title>
+</head>
+<body>
+    <div class="news_main">
+        <center>
+        {% comment %} <img class="news" src="{% static "img/info/ahn.svg" %}"> {% endcomment %}
+        <ul>
+            <li>가해자 : 강중기</li>
+            <li>피해자 : 이성혜</li>
+            <li>성별 : 여성</li>
+            <li>생년월일 : 2000.9.20</li>
+            <li>주소 : 서울특별시 서대문구 남가좌동 거북골로 100</li>
+            <li>직업 : 외판원</li>
+            <li>키 : 155cm</li>
+            <li>몸무게 : 45kg</li>
+            <li>가족 구성원 : 아버지 이상혁, 어머니 곽세영</li>
+            <li>학력 : 재학중</li>
+            <li>금고 이력 : 없음</li>
+            <li>종교 : 무교</li>
+            <li>기타 개인 정보 : </li>
+        </ul>
+        <div class="news_link"><button onclick="Back()">이전 페이지로</button></div>
+        </center>
+    </div>
+</body>
+<script>
+    function Back(){
+        window.history.back();
+    }
+</script>
+</html>

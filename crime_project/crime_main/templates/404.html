@@ -6,6 +6,24 @@
     <link rel="stylesheet" href="{% static 'css/reset.css' %}?{% now "U" %}">
 </head>
 <body>
+    <div>
+        {% comment %} <a href="{% url 'post_list' %}">list</a> {% endcomment %}
+        {% if user.is_authenticated %}
+        <div class="sbox">
+            <form method="POST" action="{% url 'logout' %}">
+                {% csrf_token %} <button type="submit" class="login_css">로그아웃</button>
+            </form>
+            {% if user.is_superuser %}
+                <button class="login_css"><a href="{% url 'post_list' %}">조사자료 추가하기</a></button>
+            {% endif %}
+        </div>
+        {% else %}
+        <div class="sbox">
+            <div class="login_css"><a href="{% url 'login' %}">로그인</a></div>
+            <div class="login_css"><a href="{% url 'signup' %}">회원가입</a></div>
+        </div>
+        {% endif %}
+        </div>
     <div class="container">
         <div class="big_box">
             <div class="logo">
@@ -15,7 +33,7 @@
                 <form method="GET" action="{% url 'search' %}" autocomplete=off>
                     <input type="text" id="search-box" name="q" placeholder="사건 번호 및 관련 키워드를 입력해주세요" autocomplete=off>
                     <button type="submit">검색</button>
-                    <div> 존재하지 않는 사건 번호 입니다.</div>
+                    <div> 존재하지 않는 사건 번호 및 키워드 입니다.</div>
                 </form>
             </div>
         </div>

@@ -1,0 +1,35 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}?{% now "U" %}">
+    <link rel="stylesheet" href="{% static 'css/reset.css' %}?{% now "U" %}">
+    <title>서브리미널</title>
+</head>
+<body>
+    <center>
+    <form method="POST" action="{% url 'signup' %}">
+        {% csrf_token %}
+
+    <div class="sign_box">
+        <div class="logo">
+        <img src="{% static 'img/police_logo.png' %}">
+        </div>
+            <input class="usern" type="text" name="username" placeholder="아이디" autocomplete=off>
+            <input type="password" name="password" placeholder="패스워드">
+            <input type="password" name="confirm" placeholder="패스워드 확인">
+            {% for message in messages %}
+                <li{% if message.tags %} class="{{ message.tags }}"{% endif %} style="color:white;">{{ message }}</li>
+            {% endfor %}
+            <input type="submit" value="회원가입" style="background-color:grey;color:white;">
+            <div style="display:flex;flex-direction: row;gap:10px;">
+                <a href="{% url 'login' %}" style="color:white;border:1px solid white;padding:3px;">로그인 페이지</a>
+                {% comment %} <a href="{% url 'main' %}" style="color:white;border:1px solid white;padding:3px;">홈</a> {% endcomment %}
+            </div>
+    </div>
+    </form>
+</center>
+</body>
+</html>

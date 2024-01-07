@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/reset.css' %}?{% now "U" %}">
+    <link rel="stylesheet" href="{% static 'css/result.css' %}?{% now "U" %}">
+    <title>"{{ query }}" 검색 결과</title>
+</head>
+<body>
+<div  class="result_main">
+    <h1 class="title">"{{ query }}" 검색 결과</h1>
+
+    {% if results %}
+    <div class="news_list">
+            {% for board in results %}
+                <div><a href="{% url 'crime_image' board.id %}">{{ board.title }}</a></div>
+            {% endfor %}
+    </div>
+    <div><a href="{% url 'main' %}">홈으로 돌아가기</a></div>
+    {% else %}
+        <p>검색 결과가 없습니다.</p><br>
+        <div><a href="{% url 'main' %}">홈으로 돌아가기</a></div>
+    {% endif %}
+</div>
+</body>
+</html>

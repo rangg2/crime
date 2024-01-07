@@ -6,6 +6,27 @@
     <link rel="stylesheet" href="{% static 'css/reset.css' %}?{% now "U" %}">
 </head>
 <body>
+    <div>
+    {% comment %} <a href="{% url 'post_list' %}">list</a> {% endcomment %}
+    {% if user.is_authenticated %}
+    <div class="sbox">
+        
+        <form method="POST" action="{% url 'logout' %}">
+            {% csrf_token %} 
+            <div>{{ user.username }}님 환영합니다.</div>
+            <button type="submit" class="login_css">로그아웃</button>
+        </form>
+        {% if user.is_superuser %}
+            <button class="login_css"><a href="{% url 'post_list' %}">조사자료 추가하기</a></button>
+        {% endif %}
+    </div>
+    {% else %}
+    <div class="sbox">
+        <div class="login_css"><a href="{% url 'login' %}">로그인</a></div>
+        <div class="login_css"><a href="{% url 'signup' %}">회원가입</a></div>
+    </div>
+    {% endif %}
+    </div>
     <div class="container">
         <div class="big_box">
             <div class="logo">

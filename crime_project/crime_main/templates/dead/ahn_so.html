@@ -1,0 +1,39 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/reset.css' %}?{% now "U" %}">
+    <link rel="stylesheet" href="{% static 'css/dead.css' %}?{% now "U" %}">
+    <title>피해자 정보</title>
+</head>
+<body>
+    <div class="news_main">
+        <center>
+        {% comment %} <img class="news" src="{% static "img/info/ahn.svg" %}"> {% endcomment %}
+        <ul>
+            <li>가해자 : 안주영</li>
+            <li>피해자 : 소지예</li>
+            <li>성별 : 여성</li>
+            <li>생년월일 : 1985.2.20</li>
+            <li>주소 : 광주광역시 서구 내방로 52</li>
+            <li>직업 : 가정주부</li>
+            <li>키 : 165cm</li>
+            <li>몸무게 : 55kg</li>
+            <li>가족 구성원 : 남편 김성기, 딸 김신애</li>
+            <li>학력 : 고졸</li>
+            <li>금고 이력 : 없음</li>
+            <li>종교 : 조화도</li>
+            <li>기타 개인 정보 : </li>
+        </ul>
+        <div class="news_link"><button onclick="Back()">이전 페이지로</button></div>
+        </center>
+    </div>
+</body>
+<script>
+    function Back(){
+        window.history.back();
+    }
+</script>
+</html>

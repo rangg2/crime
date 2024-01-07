@@ -1,0 +1,5 @@
+{% load widget_tweaks %}
+
+{% macro render_tag_input(name, value) %}
+  <input type="text" name="{{ name }}" value="{{ value|default:'' }}" />
+{% endmacro %}

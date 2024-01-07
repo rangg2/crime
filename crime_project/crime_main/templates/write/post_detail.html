@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ post.title}}</title>
+</head>
+<body>
+    <h2>제목 : {{ post.title }}</h2>
+    <p>내용 : {{ post.content|linebreaksbr }}</p>
+    <p>태그 : {{ post.tag|join:", " }}</p>
+    <p>구분 : {{ post.tag2 }}</p>
+    {% if post.image %}
+      <img src="{{ post.image.url }}" alt="{{ post.title }}">
+    {% endif %}
+    <br>
+  <a href="{% url 'post_edit' pk=post.pk %}">수정하기</a>
+  <a href="{% url 'post_delete' pk=post.pk %}">삭제하기</a>
+  <a href="{% url 'post_list' %}">리스트로 돌아가기</a>
+</body>
+</html>

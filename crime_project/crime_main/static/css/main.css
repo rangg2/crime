@@ -3,6 +3,13 @@ body{
     background-color: black;
 }
 
+input[type=submit]{
+    cursor: pointer;
+}
+
+a{
+    text-decoration: none;
+}
 
 .container {
     margin-top: 5%;
@@ -36,7 +43,7 @@ body{
     margin-left: 20px;
 }
 
-input[type="text"] {
+#search-box {
     width: 300px;
     padding: 10px;
     border: none;
@@ -64,4 +71,50 @@ form div{
     border: 1px solid grey;
     border-radius: 3px;
     background-color: grey;
+}
+
+.login_css{
+    padding: 10px;
+    color:white;
+    font-size:small;
+    background-color: black;
+}
+
+.login_css a{
+    color:white;
+    font-size:small;
+    background-color: black;
+}
+
+.sbox{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: right;
+}
+
+.sign_box{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    margin-top:50px;
+    /* border:1px solid white; */
+}
+
+.sign_box input {
+    width: 50%;
+    margin-bottom: 10px;
+    padding: 5px;
+}
+
+.usern {
+    width: 100px;
+}
+
+.sign_box button {
+    width: 50%;
+    margin-bottom: 10px;
+    padding: 5px;
 }

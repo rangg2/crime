@@ -1,0 +1,39 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/reset.css' %}?{% now "U" %}">
+    <link rel="stylesheet" href="{% static 'css/dead.css' %}?{% now "U" %}">
+    <title>피해자 정보</title>
+</head>
+<body>
+    <div class="news_main">
+        <center>
+        {% comment %} <img class="news" src="{% static "img/info/ahn.svg" %}"> {% endcomment %}
+        <ul>
+            <li>가해자 : 정기쁨</li>
+            <li>피해자 : 송수혁</li>
+            <li>성별 : 남성</li>
+            <li>생년월일 : 2000.5.6</li>
+            <li>주소 : 서울특별시 마포구 용강동 212-6 103호</li>
+            <li>직업 : 학생</li>
+            <li>키 : 175cm</li>
+            <li>몸무게 : 65kg</li>
+            <li>가족 구성원 : 아버지 송상원, 어머니 신애라, 여동생 송지세</li>
+            <li>학력 : 재학중</li>
+            <li>금고 이력 : 없음</li>
+            <li>종교 : 조화도</li>
+            <li>기타 개인 정보 : </li>
+        </ul>
+        <div class="news_link"><button onclick="Back()">이전 페이지로</button></div>
+        </center>
+    </div>
+</body>
+<script>
+    function Back(){
+        window.history.back();
+    }
+</script>
+</html>

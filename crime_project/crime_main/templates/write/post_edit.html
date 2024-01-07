@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>{% if form.instance.pk %}수정하기{% else %}자료 추가하기{% endif %} </h2>
+    <form method="post" action="{% if form.instance.pk %}{% url 'post_edit' pk=form.instance.pk %}{% else %}{% url 'post_new' %}{% endif %}" enctype="multipart/form-data">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button type="submit">저장</button>
+    </form>
+    <a href="{% url 'post_list' %}">취소</a>
+</body>
+</html>

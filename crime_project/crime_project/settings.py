@@ -54,6 +54,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'crime_main',
+    'rest_framework',
+    'widget_tweaks',
 ]
 
 MIDDLEWARE = [
@@ -139,7 +141,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = '/static/'
-# STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_ROOT = '/home/ubuntu/crime/crime/crime_project/crime_main/static/'
 # STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 
@@ -147,3 +149,19 @@ STATIC_URL = '/static/'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# AWS_STORAGE_BUCKET_NAME = get_secret("AWS_BUKET_NAME")
+# AWS_ACCESS_KEY_ID = get_secret("AWS_ACCESS_KEY")
+# AWS_SECRET_ACCESS_KEY = get_secret("AWS_SECRET_KEY")
+# AWS_S3_CUSTOM_DOMAIN = get_secret("AWS_BUKET_DOMAIN")
+# DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+# STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+# STATIC_URL = get_secret("AWS_STATIC")
+# MEDIA_URL = get_secret("AWS_MEDIA")
+
+import os
+
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
